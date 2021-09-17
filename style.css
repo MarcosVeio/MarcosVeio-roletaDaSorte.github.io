@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    background-color: rgb(26, 26, 26)
+}
+
+.main-roleta{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roleta {
+    display: grid;
+    grid-template-areas: 'green red' 'yellow blue';
+    grid-gap: 2px;
+    background-color: rgb(19, 19, 19);
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+    transition: ease 5s;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.activeClick{
+    pointer-events: all;
+}
+
+.modalEventsNone{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.modal{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background-color: rgb(216, 216, 216);
+    z-index: 1;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.336);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(27, 27, 27);
+    font-family: Arial, Helvetica, sans-serif;
+
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2 all;
+}
+
+.active{
+    pointer-events: all;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.pointer{
+    position: absolute;
+    padding-bottom: 570px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pointer img{
+    width: 100px;
+}
+
+.off5{
+    grid-area: blue;
+    background: url("./images/5OFF.png") ;
+    border-bottom-right-radius: 100%;
+}
+
+.off20{
+    grid-area: yellow;
+    background: url("./images/20OFF.png");
+    border-bottom-left-radius: 100%;
+}
+.off10{
+    grid-area: red;
+    background: url("./images/10OFF.png");
+    border-top-right-radius: 100%;
+}
+.off15{
+    grid-area: green;
+    background: url("./images/15OFF.png");
+    border-top-left-radius: 100%;
+}
+
+.selected{
+    opacity: 0.5;
+}
+
+@media (max-width: 800px) {
+    .roleta {
+        max-width: 100%;
+        max-height: 60%;
+    }
+}
