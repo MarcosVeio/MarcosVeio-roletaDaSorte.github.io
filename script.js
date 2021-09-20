@@ -73,4 +73,4 @@ function responsiveScreen () {
     modal.style.width = '80vw'
 }
 
-widthScreen < 450 ? responsiveScreen() : ''
+if(widthScreen < 450) responsiveScreen()
