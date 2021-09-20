@@ -20,7 +20,7 @@ body{
     border-radius: 100%;
     width: 500px;
     height: 500px;
-    transition: cubic-bezier(.5, .1, .15, 1) 5s;
+    transition: transform cubic-bezier(.5, .1, .15, 1) 5s;
     padding: 10px;
     pointer-events: none;
 }
